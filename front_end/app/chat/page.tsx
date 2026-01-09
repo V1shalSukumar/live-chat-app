@@ -10,12 +10,6 @@ interface Message {
   room: string | null;
 }
 
-interface OutgoingMessage {
-  token: string;
-  text: string;
-  time: string;
-  room: string | null;
-}
 export default function Chat() {
   const [roomInput, setRoomInput] = useState<string>("");
   const [activeRoom, setActiveRoom] = useState<string | null>(null);
@@ -138,7 +132,7 @@ export default function Chat() {
       />
       <button onClick={joinRoom}>Join Room</button>
       </div>
-      <div>{activeRoom && <button onClick={goBackToGlobal}>Back</button>}</div>
+      <div>{activeRoom &&<button onClick={goBackToGlobal}>Back</button>}</div>
     </div>
   );
 }

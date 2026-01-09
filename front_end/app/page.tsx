@@ -10,22 +10,8 @@ export default function Home() {
 
   const enterChat = (): void => {
     if (!username.trim()) return;
-
-    if (!socket.connected) {
-      socket.connect();
-    }
-    
-    socket.emit("login",{username},(response: any)=> {
-      
-      if (!response || response.error) {
-        alert("Login failed");
-        return;
-      }
-      
-      sessionStorage.setItem("token",response.token);
       sessionStorage.setItem("username", username);
       router.push("/chat");
-    });
   };
 
   return (
